@@ -427,10 +427,7 @@ merge_cl_big <- function(big.dat,
         cat("Compute DE genes\n")
       }
       tmp.pairs = merge.pairs[new.pairs,,drop=FALSE] 
-      print(head(cl))
-      print(head(tmp.pairs))
       de.result = de_selected_pairs(norm.dat=NULL, cl=cl, pairs=tmp.pairs, de.param= de.param, method=de.method, cl.means=cl.means, cl.present=cl.present, cl.sqr.means=cl.sqr.means,mc.cores=mc.cores)
-      cat("Compute DE genes finish\n ")
       tmp.de.genes = de.result$de.genes
       de.genes[names(tmp.de.genes)] = tmp.de.genes
       pairs = get_pairs(names(de.genes))
@@ -496,9 +493,9 @@ merge_cl_big <- function(big.dat,
       else{
         tmp.cl= cl
       }
-      print("compute de.genes")
+      #print("compute de.genes")
       de.genes = de_all_pairs(norm.dat=NULL, cl=tmp.cl, de.param=de.param, cl.means=cl.means, cl.present=cl.present, cl.sqr.means=cl.sqr.means, mc.cores=mc.cores)    
-      print("compute select_markers")
+      #print("compute select_markers")
       markers = select_markers(norm.dat=NULL, cl, de.genes=de.genes, n.markers=50, mc.cores=mc.cores)$markers
     }
     sc = sapply(de.genes, function(x){
