@@ -361,6 +361,9 @@ get_cl_sqr_means <- function(mat,cl)
     cl = setNames(factor(cl),names(cl))
   }
   result = get_cl_stats(mat, cl, stats="sqr_means")
+  print(head(result))
+  print(head(cl))
+  print(class(cl))
   result[,levels(cl),drop=F]
 }
 
