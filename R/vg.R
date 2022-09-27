@@ -70,7 +70,7 @@ find_vg <- function(dat,
   
   return_type <- match.arg(return_type,
                            choices = c("data","plots","both"))
-  
+  save(dat,file="/allen/programs/celltypes/workgroups/rnaseqanalysis/yuangao/dev_mouse_VIS_v2_new/result_parquet/bugtest.compute_vg_stats.rda")
   gene_var_stats <- compute_vg_stats(dat,
                                      rescaled=rescaled,
                                      verbose = verbose)
@@ -134,6 +134,7 @@ compute_vg_stats <- function(dat,
   means <- gene_means(scaled_data)
   
   if(verbose) { cat("Computing gene variance\n") }
+  save(scaled_data,means,file="/allen/programs/celltypes/workgroups/rnaseqanalysis/yuangao/dev_mouse_VIS_v2_new/result_parquet/bugtest.gene_vars.rda")
   vars <- gene_vars(scaled_data,
                     means = means)
   

@@ -242,6 +242,7 @@ onestep_clust <- function(norm.dat,
       counts@x = 2^(counts@x) - 1
     }
   }
+  save(counts,sampled.cells,file="/allen/programs/celltypes/workgroups/rnaseqanalysis/yuangao/dev_mouse_VIS_v2_new/result_parquet/bugtest.find_vg.rda")
   plot_file=NULL
   if(verbose & !is.null(prefix)){
     plot_file=paste0(prefix,".vg.pdf")

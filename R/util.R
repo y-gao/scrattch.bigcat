@@ -362,8 +362,9 @@ get_cl_sqr_means <- function(mat,cl)
   }
   result = get_cl_stats(mat, cl, stats="sqr_means")
   print(head(result))
+  print(table(cl))
   print(head(cl))
-  print(class(cl))
+  #print(class(cl))
   save(mat,result,cl,file="/allen/programs/celltypes/workgroups/rnaseqanalysis/yuangao/dev_mouse_VIS_v2_new/result_parquet/bugtest.rda")
   result[,levels(cl),drop=F]
 }
