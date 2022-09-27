@@ -280,6 +280,7 @@ iter_clust_big<- function(big.dat=NULL,
           tmp.prefix = paste(prefix, x, sep=".")
           if(length(tmp.cells) < 50000){
             norm.dat = get_logNormal(big.dat, tmp.cells)
+            save(norm.dat,tmp.cells,tmp.prefix,split.size,method,file="/allen/programs/celltypes/workgroups/rnaseqanalysis/yuangao/dev_mouse_VIS_v2_new/result_parquet/bugtest.iter_clust.rda")
             tmp.result=iter_clust(norm.dat=norm.dat, select.cells=tmp.cells, prefix=tmp.prefix,split.size=split.size,method= method, counts=counts, sampleSize=sampleSize, overwrite=overwrite,verbose=verbose,...)
             rm(norm.dat)
           }
